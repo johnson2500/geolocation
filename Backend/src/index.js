@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get('/api/getAppData', async (req, res) => {
-  const { limit, filter } = req.query;
+  const { limit = 5, filter } = req.query;
   console.log(req.query);
   try {
     const addSet = await axios.get('https://app.wordstream.com/services/v1/wordstream/interview_data');
